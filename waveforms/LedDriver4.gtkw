@@ -1,0 +1,88 @@
+[*]
+[*] GTKWave Analyzer v3.3.107 (w)1999-2020 BSI
+[*] Sat Dec 24 21:32:39 2022
+[*]
+[dumpfile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/LedDriver4.vcd"
+[dumpfile_mtime] "Sat Dec 24 21:31:23 2022"
+[dumpfile_size] 4096
+[savefile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/LedDriver4.gtkw"
+[timestart] 0
+[size] 1440 900
+[pos] -1 -1
+*-18.260035 86000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] LedDriver4_tb.
+[treeopen] LedDriver4_tb.driver.
+[sst_width] 193
+[signals_width] 182
+[sst_expanded] 1
+[sst_vpaned_height] 273
+@28
+LedDriver4_tb.driver.clk
+LedDriver4_tb.driver.reset
+LedDriver4_tb.driver.cur_state[3:0]
+@c00025
+LedDriver4_tb.driver.counter[3:0]
+@28
+(0)LedDriver4_tb.driver.counter[3:0]
+(1)LedDriver4_tb.driver.counter[3:0]
+(2)LedDriver4_tb.driver.counter[3:0]
+(3)LedDriver4_tb.driver.counter[3:0]
+@1401201
+-group_end
+@802028
+^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/led_chars.txt
+LedDriver4_tb.driver.an[3:0]
+@2028
+^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/led_chars.txt
+(0)LedDriver4_tb.driver.an[3:0]
+^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/led_chars.txt
+(1)LedDriver4_tb.driver.an[3:0]
+^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/led_chars.txt
+(2)LedDriver4_tb.driver.an[3:0]
+^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/led_chars.txt
+(3)LedDriver4_tb.driver.an[3:0]
+@1001200
+-group_end
+@2028
+^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/led_chars.txt
+LedDriver4_tb.driver.decoder.led[6:0]
+@c00028
+[color] 3
++{msg} LedDriver4_tb.msg_tb[15:0]
+@28
+[color] 3
+(0)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(1)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(2)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(3)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(4)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(5)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(6)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(7)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(8)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(9)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(10)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(11)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(12)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(13)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(14)LedDriver4_tb.msg_tb[15:0]
+[color] 3
+(15)LedDriver4_tb.msg_tb[15:0]
+@1401200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0
