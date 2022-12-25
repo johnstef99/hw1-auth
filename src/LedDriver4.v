@@ -47,28 +47,26 @@ module LedDriver4 (
   always @(posedge clk or posedge reset) begin : STATE_MEMORY
     if (reset) begin
       cur_state <= 4'b0001;
-      char <= 4'b1111;
-      counter <= 0;
+      counter   <= 0;
     end else begin
       cur_state <= next_state;
+      case (cur_state)
+        AN3, AN2, AN1, AN0: counter <= counter + 1;
+        default: counter <= 0;
+      endcase
     end
   end
 
-  always @(cur_state or posedge clk) begin : NEXT_STATE_LOGIC
+  always @(cur_state or counter) begin : NEXT_STATE_LOGIC
     case (cur_state)
       AN3, AN2, AN1, AN0: begin
-        if (counter == 15) begin
-          next_state = cur_state - 1;
-          counter = 0;
-        end else counter = counter + 1;
+        if (counter == 15) next_state = cur_state - 1;
       end
-      default: begin
-        next_state = cur_state - 1;
-      end
+      default: next_state = cur_state - 1;
     endcase
   end
 
-  always @(cur_state or counter) begin : OUTPUT_LOGIC
+  always @(cur_state) begin : OUTPUT_LOGIC
     case (cur_state)
       AN3:     an = 4'b0111;
       AN2:     an = 4'b1011;
