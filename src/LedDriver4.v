@@ -1,35 +1,34 @@
 `include "LedDecoder.v"
 
-// ┌────────────────────────┐
-// │ LedDriver4 FSM diagram │
-// └────────────────────────┘
-//                                                                                           counter = 15
-//                    ┌──────────────────────────────────────────────────────────────────────────────────┐
-//                    │                                                                                  │
-//                    ▼                                                                                  │
-//  ┌──────┐      ┌───────┐  counter = 15  ┌───────┐  counter = 15   ┌───────┐  counter = 15  ┌───────┐  │
-//  │ Init │─────▶│ AN3-3 │ ┌─────────────▶│ AN2-3 │ ┌──────────────▶│ AN1-3 │ ┌─────────────▶│ AN0-3 │  │
-//  └──────┘      └───────┘ │              └───────┘ │               └───────┘ │              └───────┘  │
-//             clk = 1│     │          clk = 1 │     │            clk = 1│     │          clk = 1 │      │
-//                    ▼     │                  ▼     │                   ▼     │                  ▼      │
-//                ┌───────┐ │              ┌───────┐ │               ┌───────┐ │              ┌───────┐  │
-//                │ AN3-2 │ │              │ AN2-2 │ │               │ AN1-2 │ │              │ AN0-2 │  │
-//                └───────┘ │              └───────┘ │               └───────┘ │              └───────┘  │
-//       clk = 1      │     │     clk = 1      │     │      clk = 1      │     │     clk = 1      │      │
-// (char = msg[15:12])▼     │(char = msg[11:8])▼     │ (char = msg[7:4]) ▼     │(char = msg[3:0]) ▼      │
-//                ┌───────┐ │              ┌───────┐ │               ┌───────┐ │              ┌───────┐  │
-//                │ AN3-1 │ │              │ AN2-1 │ │               │ AN1-1 │ │              │ AN0-1 │  │
-//                └───────┘ │              └───────┘ │               └───────┘ │              └───────┘  │
-//            clk = 1 │     │          clk = 1 │     │           clk = 1 │     │          clk = 1 │      │
-//           an = 0111▼     │         an = 1011▼     │          an = 1101▼     │         an = 1110▼      │
-//                ┌───────┐ │              ┌───────┐ │               ┌───────┐ │              ┌───────┐  │
-//             ┌──│  AN3  │─┘           ┌──│  AN2  │─┘            ┌──│  AN1  │─┘           ┌──│  AN0  │──┘
-//             │  └───────┘             │  └───────┘              │  └───────┘             │  └───────┘
-//             │      ▲                 │      ▲                  │      ▲                 │      ▲
-//             │      │                 │      │                  │      │                 │      │
-//             └──────┘                 └──────┘                  └──────┘                 └──────┘
-//            clk = 1                  clk = 1                   clk = 1                  clk = 1
-//          counter+=1               counter+=1                counter+=1               counter+=1
+//   ┌────────────────────────┐
+//   │ LedDriver4 FSM diagram │
+//   └────────────────────────┘
+//
+//                    ┌───────────────────────────────────────────────────────────────────────────┐
+//                    │                                                                           │
+//                    ▼                                                                           │
+//   ┌──────┐     ┌───────┐                ┌───────┐                ┌───────┐                 ┌───────┐
+//   │ Init │────▶│ AN3-3 │                │  AN2  │───────────────▶│ AN1-3 │                 │  AN0  │
+//   └──────┘     └───────┘                └───────┘                └───────┘                 └───────┘
+//                    │                        ▲                        │                         ▲
+//                    │            (an = 1011) │                        │              (an = 1110)│
+//                    ▼                        │                        ▼                         │
+//                ┌───────┐                ┌───────┐                ┌───────┐                 ┌───────┐
+//                │ AN3-2 │                │ AN2-1 │                │ AN1-2 │                 │ AN0-1 │
+//                └───────┘                └───────┘                └───────┘                 └───────┘
+//                    │                        ▲                        │                         ▲
+// (char = msg[15:12])│      (char = msg[11:8])│       (char = msg[7:4])│        (char = msg[3:0])│
+//                    ▼                        │                        ▼                         │
+//                ┌───────┐                ┌───────┐                ┌───────┐                 ┌───────┐
+//                │ AN3-1 │                │ AN2-2 │                │ AN1-1 │                 │ AN0-2 │
+//                └───────┘                └───────┘                └───────┘                 └───────┘
+//                    │                        ▲                        │                         ▲
+//         (an = 0111)│                        │             (an = 1101)│                         │
+//                    ▼                        │                        ▼                         │
+//                ┌───────┐                ┌───────┐                ┌───────┐                 ┌───────┐
+//                │  AN3  │───────────────▶│ AN2-3 │                │  AN1  │────────────────▶│ AN0-3 │
+//                └───────┘                └───────┘                └───────┘                 └───────┘
+//
 
 // Drives 4 7-segment-displays using only 1 LedDecoder
 module LedDriver4 (
@@ -51,24 +50,21 @@ module LedDriver4 (
 
   always @(posedge clk or posedge reset) begin : STATE_MEMORY
     if (reset) begin
-      cur_state <= 4'b0001;
-      counter   <= 0;
+      cur_state  <= 4'b0001;
+      next_state <= 4'b0001;
+      counter    <= 4'b0000;
     end else begin
-      cur_state <= next_state;
-      case (cur_state)
-        AN3, AN2, AN1, AN0: counter <= counter + 1;
-        default: counter <= 0;
-      endcase
+      cur_state  <= next_state;
+      counter    <= counter + 1;
     end
   end
 
   always @(cur_state or counter) begin : NEXT_STATE_LOGIC
-    case (cur_state)
-      AN3, AN2, AN1, AN0: begin
-        if (counter == 15) next_state = cur_state - 1;
-      end
-      default: next_state = cur_state - 1;
-    endcase
+    if (counter == 4'b1111) begin
+      next_state = cur_state - 1;
+    end else begin
+      next_state = cur_state;
+    end
   end
 
   always @(cur_state) begin : OUTPUT_LOGIC
