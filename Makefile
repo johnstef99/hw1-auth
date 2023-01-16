@@ -8,7 +8,7 @@ TBFILES   = $(wildcard $(SRC_DIR)/*_tb.v)
 MODULES   = $(subst _tb,,$(notdir $(basename $(TBFILES))))
 VVPFILES  = $(addprefix $(VVP_DIR)/,$(addsuffix .vvp, $(MODULES)))
 WAVEFORMS = $(addprefix $(VCD_DIR)/,$(addsuffix .vcd, $(MODULES)))
-DIAGRAMS = $(addprefix $(PNG_DIR)/,$(addsuffix .png, $(MODULES)))
+DIAGRAMS  = $(addprefix $(PNG_DIR)/,$(addsuffix .png, $(MODULES)))
 
 all: $(VVPFILES) $(WAVEFORMS)
 
@@ -20,16 +20,11 @@ $(VCD_DIR)/%.vcd: $(VVP_DIR)/%.vvp
 
 diagrams: $(DIAGRAMS)
 
-$(PNG_DIR)/%.png: $(PNG_DIR)/%.svg
-	convert -density 200 $< $@
-
-$(PNG_DIR)/%.svg: $(PNG_DIR)/%.json
-	netlistsvg $< -o $@
-
-$(PNG_DIR)/%.json: $(SRC_DIR)/%.v
-	yosys -q -p "synth -top $(subst .v,,$(notdir $(basename $(<)))); write_json $@" $<
+$(PNG_DIR)/%.png: $(SRC_DIR)/%.v
+	yosys -q -p "read_verilog $<; hierarchy; fsm; opt; show -stretch -colors 1 -format svg $(subst .v,,$(notdir $(basename $(<))))"
+	convert ~/.yosys_show.svg $@
 
 .PHONY: clean test
 
 clean:
-	rm -f $(VVPFILES) $(WAVEFORMS) $(DIAGRAMS)
+	rm -f $(VVPFILES) $(WAVEFORMS) $(DIAGRAMS) $(DIAGRAMS:.png=.ps)
