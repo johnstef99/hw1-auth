@@ -54,12 +54,12 @@ module LedDriver4 (
       next_state <= 4'b0001;
       counter    <= 4'b0000;
     end else begin
-      cur_state  <= next_state;
-      counter    <= counter + 1;
+      cur_state <= next_state;
+      counter   <= counter + 1;
     end
   end
 
-  always @(cur_state or counter) begin : NEXT_STATE_LOGIC
+  always @(counter) begin : NEXT_STATE_LOGIC
     if (counter == 4'b1111) begin
       next_state = cur_state - 1;
     end else begin
