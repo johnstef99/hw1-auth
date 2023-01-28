@@ -21,7 +21,7 @@ $(VCD_DIR)/%.vcd: $(VVP_DIR)/%.vvp
 diagrams: $(DIAGRAMS)
 
 $(PNG_DIR)/%.png: $(SRC_DIR)/%.v
-	yosys -q -p "read_verilog $<; hierarchy; fsm; opt; show -stretch -colors 1 -format svg $(subst .v,,$(notdir $(basename $(<))))"
+	yosys -q -p "read_verilog $<; hierarchy; prep; show -stretch -colors 1 -format svg $(subst .v,,$(notdir $(basename $(<))))"
 	convert ~/.yosys_show.svg $@
 
 .PHONY: clean test
