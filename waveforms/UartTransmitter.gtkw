@@ -1,0 +1,40 @@
+[*]
+[*] GTKWave Analyzer v3.3.107 (w)1999-2020 BSI
+[*] Tue Jan 17 21:33:02 2023
+[*]
+[dumpfile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/UartTransmitter.vcd"
+[dumpfile_mtime] "Tue Jan 17 21:27:09 2023"
+[dumpfile_size] 416507
+[savefile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/UartTransmitter.gtkw"
+[timestart] 0
+[size] 1616 993
+[pos] -1 -1
+*-25.403690 270000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] UartTransmitter_tb.
+[treeopen] UartTransmitter_tb.uart_trans.
+[sst_width] 193
+[signals_width] 208
+[sst_expanded] 1
+[sst_vpaned_height] 296
+@28
+UartTransmitter_tb.uart_trans.clk
+UartTransmitter_tb.uart_trans.Tx_SAMPLE
+@24
+UartTransmitter_tb.uart_trans.counter[3:0]
+UartTransmitter_tb.uart_trans.bit_count[3:0]
+@28
+UartTransmitter_tb.uart_trans.Tx_WR
+@2028
+^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/tx_states.txt
+UartTransmitter_tb.uart_trans.cur_state[1:0]
+^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/tx_states.txt
+UartTransmitter_tb.uart_trans.next_state[1:0]
+@28
+UartTransmitter_tb.uart_trans.Tx_BUSY
+UartTransmitter_tb.uart_trans.data[7:0]
+@29
+UartTransmitter_tb.uart_trans.TxD
+@28
+UartTransmitter_tb.uart_trans.parity_bit
+[pattern_trace] 1
+[pattern_trace] 0
