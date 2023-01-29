@@ -29,6 +29,7 @@ module UartTransmitter (
   reg [1:0] cur_state, next_state;
   parameter OFF = 2'b01, ON = 2'b10, TRANS = 2'b11;
 
+  wire Tx_SAMPLE;
   BaudController50MHz baud_contr (
       .clk(clk),
       .reset(reset),
