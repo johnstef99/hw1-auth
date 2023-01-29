@@ -1,0 +1,82 @@
+[*]
+[*] GTKWave Analyzer v3.3.107 (w)1999-2020 BSI
+[*] Sun Jan 29 21:27:18 2023
+[*]
+[dumpfile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/UartReceiver.vcd"
+[dumpfile_mtime] "Sun Jan 29 21:26:33 2023"
+[dumpfile_size] 1081322
+[savefile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/UartReceiver.gtkw"
+[timestart] 0
+[size] 1920 1080
+[pos] -1 -1
+*-27.031151 267400000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] UartReceiver_tb.
+[treeopen] UartReceiver_tb.uart_receiv.
+[treeopen] UartReceiver_tb.uart_trans.
+[sst_width] 193
+[signals_width] 256
+[sst_expanded] 1
+[sst_vpaned_height] 335
+@28
+UartReceiver_tb.uart_receiv.clk
+UartReceiver_tb.uart_receiv.reset
+UartReceiver_tb.uart_receiv.Rx_SAMPLE
+UartReceiver_tb.uart_receiv.Rx_PERROR
+UartReceiver_tb.uart_receiv.Rx_FERROR
+@c00022
++{trans_bit} UartReceiver_tb.uart_trans.bit_count[3:0]
+@28
+(0)UartReceiver_tb.uart_trans.bit_count[3:0]
+(1)UartReceiver_tb.uart_trans.bit_count[3:0]
+(2)UartReceiver_tb.uart_trans.bit_count[3:0]
+(3)UartReceiver_tb.uart_trans.bit_count[3:0]
+@1401200
+-group_end
+@c00024
++{receiv_bit} UartReceiver_tb.uart_receiv.bit_count[3:0]
+@28
+(0)UartReceiver_tb.uart_receiv.bit_count[3:0]
+(1)UartReceiver_tb.uart_receiv.bit_count[3:0]
+(2)UartReceiver_tb.uart_receiv.bit_count[3:0]
+(3)UartReceiver_tb.uart_receiv.bit_count[3:0]
+@1401200
+-group_end
+@28
+UartReceiver_tb.uart_trans.TxD
+@24
+UartReceiver_tb.uart_receiv.RxD
+@28
+UartReceiver_tb.uart_receiv.Rx_VALID
+@c00028
+UartReceiver_tb.uart_receiv.Rx_DATA[7:0]
+@28
+(0)UartReceiver_tb.uart_receiv.Rx_DATA[7:0]
+(1)UartReceiver_tb.uart_receiv.Rx_DATA[7:0]
+(2)UartReceiver_tb.uart_receiv.Rx_DATA[7:0]
+(3)UartReceiver_tb.uart_receiv.Rx_DATA[7:0]
+(4)UartReceiver_tb.uart_receiv.Rx_DATA[7:0]
+(5)UartReceiver_tb.uart_receiv.Rx_DATA[7:0]
+(6)UartReceiver_tb.uart_receiv.Rx_DATA[7:0]
+(7)UartReceiver_tb.uart_receiv.Rx_DATA[7:0]
+@1401200
+-group_end
+@c00028
+UartReceiver_tb.uart_trans.data[7:0]
+@28
+(0)UartReceiver_tb.uart_trans.data[7:0]
+(1)UartReceiver_tb.uart_trans.data[7:0]
+(2)UartReceiver_tb.uart_trans.data[7:0]
+(3)UartReceiver_tb.uart_trans.data[7:0]
+(4)UartReceiver_tb.uart_trans.data[7:0]
+(5)UartReceiver_tb.uart_trans.data[7:0]
+(6)UartReceiver_tb.uart_trans.data[7:0]
+(7)UartReceiver_tb.uart_trans.data[7:0]
+@1401200
+-group_end
+@2028
+^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/rx_states.txt
+UartReceiver_tb.uart_receiv.cur_state[1:0]
+^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/rx_states.txt
+UartReceiver_tb.uart_receiv.next_state[1:0]
+[pattern_trace] 1
+[pattern_trace] 0
