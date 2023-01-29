@@ -38,7 +38,7 @@ module UartTransmitter_tb;
     @(negedge busy);
 
     @(posedge clk_tb);
-    tx_data_tb = 8'b10000000;
+    tx_data_tb = 8'b00000001;
     tx_wr_tb   = 1;
     @(posedge clk_tb)// tx_wr_tb = 0;
     @(negedge busy);
