@@ -38,8 +38,11 @@ module UartTransmitter (
 
   always @(posedge Tx_SAMPLE) begin : COUNT_16_SAMPLES
     if (cur_state == TRANS) begin
-      if (counter == 4'b1111) begin
-        counter = 4'b0000;
+      if (counter == 4'b0000) begin
+
+        if (TxD == 0 && bit_count == 0) bit_count = bit_count + 1;
+        else if (bit_count == 0) bit_count = 0;
+        else bit_count = bit_count + 1;
 
         case (bit_count)
           4'd0: begin
@@ -50,19 +53,21 @@ module UartTransmitter (
           end
           4'd10: begin
             TxD = 1;  // stop bit
-            Tx_BUSY = 0;
           end
           default: begin
             TxD = data[bit_count-1];  // data bit
           end
         endcase
 
-        if (bit_count == 4'd10) bit_count = 0;
-        else bit_count = bit_count + 1;
-
-      end else begin
-        counter = counter + 1;
       end
+      if (counter == 4'b1111) begin
+        counter = 0;
+        if (bit_count == 4'd10)
+        begin
+          Tx_BUSY = 0;
+          bit_count = 0;
+        end
+      end else counter = counter + 1;
     end else begin
       counter   = 4'b0000;
       bit_count = 4'd0;
@@ -77,8 +82,8 @@ module UartTransmitter (
       parity_bit <= 1'b0;
       TxD        <= 1'b1;
       Tx_BUSY    <= 1'b0;
-      cur_state  <= OFF;
-      next_state <= OFF;
+      cur_state  <= Tx_EN ? ON : OFF;
+      next_state <= Tx_EN ? ON : OFF;
     end else begin
       cur_state <= next_state;
     end
