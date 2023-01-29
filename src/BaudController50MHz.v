@@ -1,3 +1,6 @@
+`ifndef _BAUD_CONTROLLER_50MHZ_
+`define _BAUD_CONTROLLER_50MHZ_
+
 module BaudController50MHz (
     input clk,
     reset,
@@ -29,10 +32,12 @@ module BaudController50MHz (
         counter  <= 0;
         baud_out <= 1;
       end else begin
-        counter <= counter + 1;
+        counter  <= counter + 1;
         baud_out <= 0;
       end
     end
   end
 
 endmodule
+
+`endif
