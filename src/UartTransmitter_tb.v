@@ -32,15 +32,15 @@ module UartTransmitter_tb;
 
     @(posedge clk_tb) reset_tb = 0;
 
-    tx_data_tb = 8'b11111111;
+    tx_data_tb = 8'b10100001;
     tx_wr_tb   = 1;
-    @(posedge clk_tb)// tx_wr_tb = 0;
+    @(posedge clk_tb) tx_wr_tb = 0;
     @(negedge busy);
 
     @(posedge clk_tb);
-    tx_data_tb = 8'b00000001;
+    tx_data_tb = 8'b10010100;
     tx_wr_tb   = 1;
-    @(posedge clk_tb)// tx_wr_tb = 0;
+    @(posedge clk_tb) tx_wr_tb = 0;
     @(negedge busy);
 
     repeat (540) @(posedge clk_tb);
