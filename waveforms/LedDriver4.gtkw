@@ -1,25 +1,25 @@
 [*]
 [*] GTKWave Analyzer v3.3.107 (w)1999-2020 BSI
-[*] Sun Dec 25 22:31:13 2022
+[*] Mon Jan 30 09:16:47 2023
 [*]
 [dumpfile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/LedDriver4.vcd"
-[dumpfile_mtime] "Sun Dec 25 22:10:50 2022"
-[dumpfile_size] 11613
+[dumpfile_mtime] "Mon Jan 30 08:53:03 2023"
+[dumpfile_size] 35444
 [savefile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/LedDriver4.gtkw"
 [timestart] 0
-[size] 1698 889
+[size] 1920 1027
 [pos] -1 -1
-*-19.800997 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-21.333290 -1 950000 1270000 2230000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] LedDriver4_tb.
 [treeopen] LedDriver4_tb.driver.
 [sst_width] 193
 [signals_width] 124
 [sst_expanded] 1
-[sst_vpaned_height] 268
+[sst_vpaned_height] 510
 @28
 LedDriver4_tb.clk_tb
 LedDriver4_tb.driver.reset
-@802028
+@c02028
 ^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/anode_states.txt
 +{anodes} LedDriver4_tb.driver.an[3:0]
 @28
@@ -27,7 +27,7 @@ LedDriver4_tb.driver.reset
 (1)LedDriver4_tb.driver.an[3:0]
 (2)LedDriver4_tb.driver.an[3:0]
 (3)LedDriver4_tb.driver.an[3:0]
-@1001200
+@1401200
 -group_end
 @c02028
 ^2 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/led_chars.txt
@@ -42,9 +42,9 @@ LedDriver4_tb.driver.decoder.led[6:0]
 (6)LedDriver4_tb.driver.decoder.led[6:0]
 @1401200
 -group_end
-@c00029
+@c00028
 +{msg_to_disp} LedDriver4_tb.driver.msg[15:0]
-@29
+@28
 (0)LedDriver4_tb.driver.msg[15:0]
 (1)LedDriver4_tb.driver.msg[15:0]
 (2)LedDriver4_tb.driver.msg[15:0]
@@ -61,7 +61,7 @@ LedDriver4_tb.driver.decoder.led[6:0]
 (13)LedDriver4_tb.driver.msg[15:0]
 (14)LedDriver4_tb.driver.msg[15:0]
 (15)LedDriver4_tb.driver.msg[15:0]
-@1401201
+@1401200
 -group_end
 [pattern_trace] 1
 [pattern_trace] 0

@@ -1,0 +1,24 @@
+[*]
+[*] GTKWave Analyzer v3.3.107 (w)1999-2020 BSI
+[*] Mon Jan 30 13:31:40 2023
+[*]
+[dumpfile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/BaudController50MHz.vcd"
+[dumpfile_mtime] "Mon Jan 30 13:18:33 2023"
+[dumpfile_size] 130776
+[savefile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/BaudController50MHz.gtkw"
+[timestart] 0
+[size] 1920 1080
+[pos] -1 -1
+*-21.400740 -1 1070000 1610000 11910000 18430000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] BaudController50MHz_tb.
+[sst_width] 193
+[signals_width] 141
+[sst_expanded] 1
+[sst_vpaned_height] 326
+@2028
+^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/baud_sel.txt
+BaudController50MHz_tb.baud_contr.baud_sel[2:0]
+@28
+BaudController50MHz_tb.baud_contr.baud_out
+[pattern_trace] 1
+[pattern_trace] 0

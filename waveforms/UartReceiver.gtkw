@@ -1,28 +1,29 @@
 [*]
 [*] GTKWave Analyzer v3.3.107 (w)1999-2020 BSI
-[*] Sun Jan 29 21:27:18 2023
+[*] Mon Jan 30 13:31:44 2023
 [*]
 [dumpfile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/UartReceiver.vcd"
-[dumpfile_mtime] "Sun Jan 29 21:26:33 2023"
-[dumpfile_size] 1081322
+[dumpfile_mtime] "Mon Jan 30 11:45:40 2023"
+[dumpfile_size] 868318
 [savefile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/UartReceiver.gtkw"
-[timestart] 0
+[timestart] 190080000
 [size] 1920 1080
 [pos] -1 -1
-*-27.031151 267400000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-23.588646 -1 47700000 281800000 186290000 376370000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] UartReceiver_tb.
 [treeopen] UartReceiver_tb.uart_receiv.
 [treeopen] UartReceiver_tb.uart_trans.
 [sst_width] 193
-[signals_width] 256
+[signals_width] 150
 [sst_expanded] 1
-[sst_vpaned_height] 335
+[sst_vpaned_height] 656
 @28
 UartReceiver_tb.uart_receiv.clk
 UartReceiver_tb.uart_receiv.reset
 UartReceiver_tb.uart_receiv.Rx_SAMPLE
 UartReceiver_tb.uart_receiv.Rx_PERROR
 UartReceiver_tb.uart_receiv.Rx_FERROR
+UartReceiver_tb.uart_receiv.Rx_VALID
 @c00022
 +{trans_bit} UartReceiver_tb.uart_trans.bit_count[3:0]
 @28
@@ -45,8 +46,6 @@ UartReceiver_tb.uart_receiv.Rx_FERROR
 UartReceiver_tb.uart_trans.TxD
 @24
 UartReceiver_tb.uart_receiv.RxD
-@28
-UartReceiver_tb.uart_receiv.Rx_VALID
 @c00028
 UartReceiver_tb.uart_receiv.Rx_DATA[7:0]
 @28
@@ -76,7 +75,5 @@ UartReceiver_tb.uart_trans.data[7:0]
 @2028
 ^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/rx_states.txt
 UartReceiver_tb.uart_receiv.cur_state[1:0]
-^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/rx_states.txt
-UartReceiver_tb.uart_receiv.next_state[1:0]
 [pattern_trace] 1
 [pattern_trace] 0

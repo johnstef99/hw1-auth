@@ -1,0 +1,35 @@
+[*]
+[*] GTKWave Analyzer v3.3.107 (w)1999-2020 BSI
+[*] Mon Jan 30 08:47:36 2023
+[*]
+[dumpfile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/LedDecoder.vcd"
+[dumpfile_mtime] "Sun Jan 29 12:17:14 2023"
+[dumpfile_size] 897
+[savefile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/LedDecoder.gtkw"
+[timestart] 0
+[size] 1920 1027
+[pos] -1 -1
+*-14.164340 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] LedDecoder_tb.
+[sst_width] 193
+[signals_width] 150
+[sst_expanded] 1
+[sst_vpaned_height] 317
+@28
++{char} LedDecoder_tb.ledDec.char[3:0]
++{led binary} LedDecoder_tb.ledDec.led[6:0]
+@c02028
+^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/led_chars.txt
++{led translated} LedDecoder_tb.ledDec.led[6:0]
+@28
+(0)LedDecoder_tb.ledDec.led[6:0]
+(1)LedDecoder_tb.ledDec.led[6:0]
+(2)LedDecoder_tb.ledDec.led[6:0]
+(3)LedDecoder_tb.ledDec.led[6:0]
+(4)LedDecoder_tb.ledDec.led[6:0]
+(5)LedDecoder_tb.ledDec.led[6:0]
+(6)LedDecoder_tb.ledDec.led[6:0]
+@1401200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0
