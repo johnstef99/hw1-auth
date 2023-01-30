@@ -47,14 +47,7 @@ module UartReceiver_tb;
 
     @(posedge clk_tb) reset_tb = 0;
 
-    tx_data_tb = 8'b10101010;
-    tx_wr_tb   = 1;
-    @(posedge clk_tb) tx_wr_tb = 0;
-    @(negedge busy);
-
-    // reproduce parity error
-    @(posedge clk_tb);
-    tx_data_tb = 8'b11111111;
+    tx_data_tb = 8'b10100001;
     tx_wr_tb   = 1;
     @(posedge clk_tb) tx_wr_tb = 0;
     repeat ((16 * 5 + 1) + 4) @(posedge uart_trans.Tx_SAMPLE);
@@ -63,15 +56,16 @@ module UartReceiver_tb;
     noise = 0;
     @(negedge busy);
 
+    // reproduce parity error
     @(posedge clk_tb);
-    tx_data_tb = 8'b11111111;
+    tx_data_tb = 8'b10100001;
     tx_wr_tb   = 1;
     @(posedge clk_tb) tx_wr_tb = 0;
     @(negedge busy);
 
     // reproduce frame error
     @(posedge clk_tb);
-    tx_data_tb = 8'b11111111;
+    tx_data_tb = 8'b10010100;
     tx_wr_tb   = 1;
     @(posedge clk_tb) tx_wr_tb = 0;
     repeat ((16 * 10 + 1) + 4) @(posedge uart_trans.Tx_SAMPLE);
@@ -81,10 +75,11 @@ module UartReceiver_tb;
     @(negedge busy);
 
     @(posedge clk_tb);
-    tx_data_tb = 8'b00000000;
+    tx_data_tb = 8'b10010100;
     tx_wr_tb   = 1;
     @(posedge clk_tb) tx_wr_tb = 0;
     @(negedge busy);
+
 
     repeat (540) @(posedge clk_tb);
     $finish;

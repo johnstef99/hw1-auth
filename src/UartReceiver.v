@@ -1,5 +1,17 @@
 `include "BaudController50MHz.v"
 
+//    ┌───────bit_count=10 && counter=15──────┐
+//    │                Tx_EN=0                │
+//    ▼                                       │
+// ┌─────┐            ┌─────┐              ┌─────┐
+// │ OFF │───────────▶│ ON  │─────────────▶│ REC │
+// └─────┘  Rx_EN=1   └─────┘    RxD=0     └─────┘
+//                       ▲                    │
+//                       │                    │
+//                       └────────────────────┘
+//                      bit_count=10 && counter=15
+//                               Tx_EN=1
+
 module UartReceiver (
     input reset,
     clk,
