@@ -1,0 +1,21 @@
+\documentclass[12pt]{article}
+\include{config}
+\include{title}
+   
+\begin{document}
+\pagenumbering{gobble} % to remove numbering for first page
+\maketitle \newpage
+\pagenumbering{arabic}
+\tableofcontents \newpage
+
+\subfile{sections/intro}
+\subfile{sections/7_segment_display}
+\subfile{sections/uart}
+\subfile{sections/final}
+
+\section*{Κώδικάς και εικόνες}
+Όλες οι εικόνες, τα waveforms και ο κώδικας των modules είναι διαθέσιμα στο
+github repo
+\href{https://github.com/johnstef99/hw1-auth}{github.com/johnstef99/hw1-auth}.
+
+\end{document}
