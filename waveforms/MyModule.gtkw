@@ -1,0 +1,63 @@
+[*]
+[*] GTKWave Analyzer v3.3.107 (w)1999-2020 BSI
+[*] Mon Jan 30 15:42:17 2023
+[*]
+[dumpfile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/MyModule.vcd"
+[dumpfile_mtime] "Mon Jan 30 15:42:12 2023"
+[dumpfile_size] 653375
+[savefile] "/Users/johnstef/Documents/auth/hw1/assigment/waveforms/MyModule.gtkw"
+[timestart] 0
+[size] 1920 1027
+[pos] -1 -1
+*-25.192698 -1 82610000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] MyModule_tb.
+[treeopen] MyModule_tb.mymodule.
+[treeopen] MyModule_tb.mymodule.led_driver.
+[treeopen] MyModule_tb.mymodule.uart_receiv.
+[treeopen] MyModule_tb.mymodule.uart_trans.
+[sst_width] 193
+[signals_width] 152
+[sst_expanded] 1
+[sst_vpaned_height] 317
+@c02028
+^1 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/led_chars.txt
+MyModule_tb.led_out[6:0]
+@28
+(0)MyModule_tb.led_out[6:0]
+(1)MyModule_tb.led_out[6:0]
+(2)MyModule_tb.led_out[6:0]
+(3)MyModule_tb.led_out[6:0]
+(4)MyModule_tb.led_out[6:0]
+(5)MyModule_tb.led_out[6:0]
+(6)MyModule_tb.led_out[6:0]
+@1401200
+-group_end
+@c02028
+^2 /Users/johnstef/Documents/auth/hw1/assigment/waveforms/anode_states.txt
+MyModule_tb.anodes[3:0]
+@28
+[color] 1
+(0)MyModule_tb.anodes[3:0]
+[color] 2
+(1)MyModule_tb.anodes[3:0]
+[color] 3
+(2)MyModule_tb.anodes[3:0]
+[color] 4
+(3)MyModule_tb.anodes[3:0]
+@1401200
+-group_end
+@28
+MyModule_tb.data[7:0]
+@24
+MyModule_tb.mymodule.uart_receiv.bit_count[3:0]
+@28
+MyModule_tb.mymodule.uart_receiv.RxD
+MyModule_tb.mymodule.uart_receiv.Rx_VALID
+@22
+MyModule_tb.mymodule.msg_buffer.msg_temp[7:0]
+MyModule_tb.mymodule.msg_buffer.msg[15:0]
+@28
+MyModule_tb.mymodule.msg_buffer.has_error
+MyModule_tb.mymodule.noise
+[pattern_trace] 1
+[pattern_trace] 0
