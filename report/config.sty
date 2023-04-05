@@ -1,11 +1,14 @@
+\ProvidesPackage{config}[2023/04/02 v1.0 Config file for LaTeX projects by johnstef]
+
+% Custom overfull limit
+\hfuzz=2pt
+
 % Font and language
+\usepackage{libertine}
 \usepackage{fontspec}
 \usepackage{polyglossia}
 \setmainlanguage{greek}
 \setotherlanguage{english}
-\setmainfont{Linux Libertine O}
-\newfontfamily\greekfont[Script=Greek]{Linux Libertine O}
-\newfontfamily\greekfontsf[Script=Greek]{Linux Libertine O}
 
 % Paper
 \usepackage[a4paper]{geometry}
